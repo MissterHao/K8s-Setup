@@ -4,6 +4,7 @@ metadata:
   labels:
     app: echo
   name: echo
+  namespace: default
 spec:
   ports:
     - port: 1025
@@ -27,6 +28,7 @@ metadata:
   labels:
     app: echo
   name: echo
+  namespace: default
 spec:
   replicas: 1
   selector:
