@@ -27,6 +27,13 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl apply -f configmap.yaml 
 ```
 
+Install Prometheus
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install prometheus-mine prometheus-community/kube-prometheus-stack -n prometheus --set eb.route-prefix="/prometheus"
+```
 
 
 ## Argo
@@ -36,3 +43,11 @@ kubectl apply -f configmap.yaml
 
 2. `server.insecure: "true"` 是因為我沒有自己簽證 tls ssl 簽證，所以我要讓 argo 不使用 ssl
 3. `argocd repo add git@github.com:MissterHao/K8s-Setup.git --ssh-private-key-path ~/.ssh/henry_me_id_ed25519` 用來設定 private repository
+
+
+## Prometheus 
+
+預設帳號密碼：
+user: admin
+pswd: prom-operator
+
