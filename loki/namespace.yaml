@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: loki
+  labels:
+    app: loki
+    component: monitor
+    component-backend: loki
